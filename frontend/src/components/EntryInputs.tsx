@@ -59,7 +59,11 @@ export default function EntryInputs({ handleSend, originalEntry, completeActionB
         className="dark:text-white dark:bg-slate-700 dark:border-black dark:focus:outline-none dark:focus:ring dark:focus:ring-black p-3 rounded-md"
         type="date"
         name="scheduled_for"
-        value={entry.scheduled_for ? new Date(entry.scheduled_for).toISOString().split("T")[0] : undefined}
+        value={
+          entry.scheduled_for && entry.scheduled_for != null
+            ? new Date(entry.scheduled_for).toISOString().split("T")[0]
+            : undefined
+        }
         onChange={handleInputChange}
       />
       {button}

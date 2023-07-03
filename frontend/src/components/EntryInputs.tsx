@@ -10,7 +10,7 @@ export default function EntryInputs({ handleSend, originalEntry, completeActionB
     }
   }, [originalEntry]);
 
-  const emptyEntry: Entry = { title: "", description: "", created_at: new Date(), scheduled_for: new Date() };
+  const emptyEntry: Entry = { title: "", description: "", created_at: new Date() };
 
   if (originalEntry === undefined) {
     originalEntry = emptyEntry;
@@ -59,7 +59,7 @@ export default function EntryInputs({ handleSend, originalEntry, completeActionB
         className="dark:text-white dark:bg-slate-700 dark:border-black dark:focus:outline-none dark:focus:ring dark:focus:ring-black p-3 rounded-md"
         type="date"
         name="scheduled_for"
-        value={new Date(entry.scheduled_for).toISOString().split("T")[0]}
+        value={entry.scheduled_for ? new Date(entry.scheduled_for).toISOString().split("T")[0] : undefined}
         onChange={handleInputChange}
       />
       {button}

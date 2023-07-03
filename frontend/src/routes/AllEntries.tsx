@@ -56,12 +56,14 @@ export default function AllEntries() {
                 {new Date(entry.created_at.toString()).toLocaleDateString()}
               </time>
             </section>
-            <section className="flex items-center justify-between flex-col md:flex-row pt-2 md:pt-0">
-              <p>Scheduled for:</p>
-              <time className="text-right text-sm md:text-lg">
-                {new Date(entry.scheduled_for.toString()).toLocaleDateString()}
-              </time>
-            </section>
+            {entry.scheduled_for && (
+              <section className="flex items-center justify-between flex-col md:flex-row pt-2 md:pt-0">
+                <p>Scheduled for:</p>
+                <time className="text-right text-sm md:text-lg">
+                  {new Date(entry.scheduled_for!.toString()).toLocaleDateString()}
+                </time>
+              </section>
+            )}
           </div>
         );
       })}

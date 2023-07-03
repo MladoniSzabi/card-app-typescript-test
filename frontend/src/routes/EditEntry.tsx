@@ -25,7 +25,9 @@ export default function EditEntry() {
       handleSend={handleSend}
       originalEntry={entry}
       completeActionButton={
-        <button className="bg-blue-400 hover:bg-blue-600 font-semibold text-white p-3 rounded-md">Update</button>
+        <button className="dark:text-gray-800 dark:bg-slate-400 bg-blue-400 hover:bg-blue-600 font-semibold text-white p-3 rounded-md">
+          Update
+        </button>
       }
     />
   );

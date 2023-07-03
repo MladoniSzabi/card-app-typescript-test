@@ -39,7 +39,7 @@ export default function App() {
           <div className="flex justify-center items-center gap-5">
             <NavBar></NavBar>
             <SliderInput
-              inputs={["light", "dark"]}
+              inputs={["Light", "Dark"]}
               checked={initialIsDarkMode}
               name="dark-mode-switch"
               onChange={selectTheme}

@@ -9,11 +9,11 @@ export default function SliderInput({ inputs, name, checked, onChange }: SliderI
   }
 
   return (
-    <>
-      <label className="cursor-pointer" htmlFor={"radio-input-" + String(inputs[0])}>
+    <div className="flex justify-center items-center gap-2 ">
+      <label className="dark:text-white cursor-pointer" htmlFor={"radio-input-" + String(inputs[0])}>
         {inputs[0]}
       </label>
-      <div className="bg-white border-black border-2 rounded-full flex items-center p-0.5 relative">
+      <div className="dark:bg-gray-800 bg-white border-black border-2 rounded-full flex items-center p-0.5 relative">
         {inputs.map((input, index) => {
           const isChecked = (checked && index == 1) || (!checked && index == 0);
           console.log(index, isChecked);
@@ -32,14 +32,18 @@ export default function SliderInput({ inputs, name, checked, onChange }: SliderI
                 name={name}
                 value={input}
               ></input>
-              <div className={isChecked ? "w-4 h-4 rounded-full bg-blue-400" : "w-4 h-4 rounded-full z-10"}></div>
+              <div
+                className={
+                  isChecked ? "w-4 h-4 rounded-full bg-blue-400 dark:bg-slate-400" : "w-4 h-4 rounded-full z-10"
+                }
+              ></div>
             </label>
           );
         })}
       </div>
-      <label className="cursor-pointer" htmlFor={"radio-input-" + String(inputs[1])}>
+      <label className="dark:text-white cursor-pointer" htmlFor={"radio-input-" + String(inputs[1])}>
         {inputs[1]}
       </label>
-    </>
+    </div>
   );
 }

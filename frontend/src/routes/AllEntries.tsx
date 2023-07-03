@@ -49,8 +49,17 @@ export default function AllEntries() {
                   🖊
                 </button>
               </div>
+            </section>
+            <section className="flex items-center justify-between flex-col md:flex-row pt-2 md:pt-0">
+              <p>Created at:</p>
               <time className="text-right text-sm md:text-lg">
                 {new Date(entry.created_at.toString()).toLocaleDateString()}
+              </time>
+            </section>
+            <section className="flex items-center justify-between flex-col md:flex-row pt-2 md:pt-0">
+              <p>Scheduled for:</p>
+              <time className="text-right text-sm md:text-lg">
+                {new Date(entry.scheduled_for.toString()).toLocaleDateString()}
               </time>
             </section>
           </div>

@@ -10,7 +10,7 @@ export default function EntryInputs({ handleSend, originalEntry, completeActionB
     }
   }, [originalEntry]);
 
-  const emptyEntry: Entry = { title: "", description: "", created_at: new Date() };
+  const emptyEntry: Entry = { title: "", description: "", created_at: new Date(), scheduled_for: new Date() };
 
   if (originalEntry === undefined) {
     originalEntry = emptyEntry;
@@ -53,6 +53,13 @@ export default function EntryInputs({ handleSend, originalEntry, completeActionB
         type="date"
         name="created_at"
         value={new Date(entry.created_at).toISOString().split("T")[0]}
+        onChange={handleInputChange}
+      />
+      <input
+        className="dark:text-white dark:bg-slate-700 dark:border-black dark:focus:outline-none dark:focus:ring dark:focus:ring-black p-3 rounded-md"
+        type="date"
+        name="scheduled_for"
+        value={new Date(entry.scheduled_for).toISOString().split("T")[0]}
         onChange={handleInputChange}
       />
       {button}
